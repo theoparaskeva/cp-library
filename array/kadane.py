@@ -1,3 +1,6 @@
+### Kadane's Algorithm
+### maxiumum subarray
+
 list = [12,-5,14,65,-4]
 n = len(list)
 current_max = list[0]
