@@ -24,17 +24,22 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
         vow = {"a","e","i","o","u"}
+        ### set l to 0, the first element in our window
         l,c,ans = 0,0,0
 
+
         for r in range(len(s)):
+            ## loop through and if current letter is a vowel, increment the count
             if s[r] in vow:
                 c+=1
-            
+            ## once we reach the size of our window
             if r - l + 1 > k:
+                ## if the first letter we counted was a vowel we decrement the count
                 if s[l] in vow:
                     c-=1
+                ## we now move the window along by incrementing the left pointer
                 l+=1
-
+            ## in each iteration we check if the current count of vowels in our window has increased
             ans = max(ans,c)
         
         return ans
