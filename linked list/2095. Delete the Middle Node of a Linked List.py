@@ -26,14 +26,18 @@ from typing import ListNode,Optional
 
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        ## question is asking to remove middle node but we want to aim for the node before middle, 
+        # therefore we create a new node at the beginning
         dummy = ListNode(0,head)
         left = dummy
         right = head
 
+        ### the right moves twice as fast as the left meaning left is pointing to the middle node -1 (due to 0 node at beginning)
         while right and right.next:
             left = left.next
             right = right.next.next
         
+        ### change next of middle -1 to node after middle, removing
         left.next = left.next.next
         
         return dummy.next
