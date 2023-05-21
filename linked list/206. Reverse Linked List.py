@@ -19,10 +19,14 @@ class Solution:
         prev,curr = None,head
 
         while curr:
+            ## keep track of the next element in the original list
             nxt = curr.next
+            ## set the next to prev - first iteration will be 0
             curr.next = prev
+            ## set the prev to the current node
             prev = curr
+            ## go to next node in the original order
             curr = nxt
-        
+        ## return the last first node in the list
         return prev
         
