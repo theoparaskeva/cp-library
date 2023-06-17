@@ -27,6 +27,7 @@ class Solution:
             ### if item is an operator, we take the two last seen numbers and perform the operation
             if tokens[x] == "+":
                 p = stack.pop() + stack.pop()
+                ### by popping we remove the last two items and then append the new value
                 stack.append(p)
             elif tokens[x] == "*":
                 m = stack.pop() * stack.pop()
