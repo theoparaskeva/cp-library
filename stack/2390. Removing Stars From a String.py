@@ -26,8 +26,10 @@ class Solution:
     def removeStars(self, s: str) -> str:
         res = []
         for c in s:
+            ### if c is a letter we append it to our stack
             if c != '*':
                 res += c
-            elif res:
+            ### if c is a star we pop the last seen letter
+            else:
                 res.pop()
         return ''.join(res)
