@@ -21,7 +21,7 @@ def sieve(n):
     prime[1] = False
 
     # Iterate from 2 to the square root of n
-    for i in range(2,isqrt(n)):
+    for i in range(2,isqrt(n)+1):
         if prime[i]:
             ## go through the multiples of each iteration of i from i*i to n
             for x in range(i*i, n, i):
