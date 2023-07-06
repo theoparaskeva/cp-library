@@ -26,11 +26,15 @@ from typing import List
 class Solution:
     def matrixSum(self, nums: List[List[int]]) -> int:
             c= 0
+            ### for each row, we sort in descending order so that the x largest number is at index x
             for x in range(len(nums)):
                 nums[x].sort(reverse=True)
             
-            zp = list(zip(*nums))          
+            ### we transpose the list so that each column is now a row
+            zp = list(zip(*nums))     
+            ### each row is now made up of the largest number of each row of the original matrix :)    
             for x in range(len(zp)):
+                ### we take the max of each row and add to our counter
                 c+=max(zp[x])
             return c
             
